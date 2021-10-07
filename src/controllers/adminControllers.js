@@ -1,6 +1,6 @@
 var admin = [
-    {nombres: "Nelson", apellidos: "Herrera", tipoDoc: "CC", numDoc: 12345678, email: "nelson@gmail.com", password: "asd123", confiPass: "asd123"},
-    {nombres: "Ruben", apellidos: "Conde", tipoDoc: "CC", numDoc: 98765432, email: "ruben@gmail.com", password: "qwef987", confiPass: "qwef987"},
+    {nombres: "Nelson", apellidos: "Herrera", tipoDoc: "CC", numDoc: 12345678, password: "asd123", confiPass: "asd123"},
+    {nombres: "Ruben", apellidos: "Conde", tipoDoc: "CC", numDoc: 98765432, password: "qwef987", confiPass: "qwef987"},
 
 ];
 
