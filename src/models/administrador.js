@@ -9,14 +9,20 @@ const administradorSchema = new Schema({
     apellidos: {
         type: String
     },
+    tipoDoc: {
+        type: String
+    },
+    numDoc: {
+        type: Number
+    },
     email: {
         type: String
     },
-    telefono: {
+    password: {
         type: String
     },
-    edad: {
-        type: Number
+    confiPass: {
+        type: String
     }
 }, {
     collection: "administradores"
