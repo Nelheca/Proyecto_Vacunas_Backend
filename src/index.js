@@ -1,7 +1,7 @@
 //Importar express
 const express = require('express');
 //Importar Rutas
-const veteRouter = require('./routers/veteRouters');
+const adminRouter = require('./routers/adminRouters');
 
 class Server{
     //constructor
@@ -18,8 +18,9 @@ class Server{
             console.log("Conexión exitosa..");
             res.status(200).json({message: "Conexión exitosa"});
         });
-        //Agregar las rutas de users
-        const adminR = new veteRouter.default();
+        
+        //---Agregar las rutas de adminstradores----
+        const adminR = new adminRouter.default();
         this.app.use(adminR.router);
         
         //agregar la ruta a la app express

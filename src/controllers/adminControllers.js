@@ -4,7 +4,7 @@ var admin = [
 
 ];
 
-class VeteController{
+class AdminController{
 
     constructor(){
 
@@ -16,4 +16,4 @@ class VeteController{
 
 }
 
-exports.default = VeteController;
+exports.default = AdminController;

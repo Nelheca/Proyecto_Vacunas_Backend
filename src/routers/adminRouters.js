@@ -1,7 +1,7 @@
 const express = require('express');
-const veteController = require('../controllers/veteControllers');
+const adminController = require('../controllers/adminControllers');
 
-class VeteRouter {
+class AdminRouter {
 
     constructor() {
         this.router = express.Router();
@@ -9,11 +9,11 @@ class VeteRouter {
     }
 
     config() {
-        const adminC = new veteController.default();
+        const adminC = new adminController.default();
         this.router.get('/admin', adminC.getAlladmin);
     }
 }
-exports.default = VeteRouter;
+exports.default = AdminRouter;
 
 
 
