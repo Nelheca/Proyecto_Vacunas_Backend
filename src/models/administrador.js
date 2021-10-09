@@ -15,6 +15,12 @@ const administradorSchema = new Schema({
     numDoc: {
         type: Number
     },
+    telefono: {
+        type: Number
+    },
+    email: {
+        type: String 
+    },
     password: {
         type: String
     },

@@ -2,6 +2,7 @@
 const express = require('express');
 //Importar rutas
 const adminRouter = require('./routers/adminRouters');
+const mascotaRouter = require('./routers/mascotaRouter');
 //Importar mongoose
 const mongoose = require('mongoose');
 //Importar el módulo que contiene la url de la bd
@@ -31,6 +32,9 @@ class Server{
         /*****************RUTAS DEL SERVIDOR***************/
         const adminR = new adminRouter.default();
         this.app.use(adminR.router);
+
+        const mascoR = new mascotaRouter.default();
+        this.app.use(mascoR.router);
         
         /**************AGREGAR LAS RUTAS CREADAS AL SERVIDOR*************/
         this.app.use(router);

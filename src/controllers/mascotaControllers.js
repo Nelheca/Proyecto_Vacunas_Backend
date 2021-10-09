@@ -1,15 +1,15 @@
-const administrador = require('../models/administrador');
+const mascotas = require('../models/mastotas');
 
 
-class AdminController{
+class MascotaControllers{
 
     constructor(){
 
     }
 
-    //Obtener todos los Veterianrios
-    getAlladmin(req, res) {
-        administrador.find((error, data) =>{
+    //Obtener todas las mascotas
+    getAllmascota(req, res) {
+        mascotas.find((error, data) =>{
             if(error){
                 res.status(500).send();
             }else{
@@ -17,10 +17,10 @@ class AdminController{
             }
         })
     }
-    //Obtener Veterianrio por Id
-    getAdminById(req, res) {
+    //Obtener Mascotas por Id
+    getMascotaById(req, res) {
         let id = req.params.id;
-        administrador.findById(id, (error, data)=>{
+        mascotas.findById(id, (error, data)=>{
             if(error){
                 res.status(500).send();
             }else{
@@ -28,9 +28,9 @@ class AdminController{
             }
         });
     }
-    // Registrar Veterinarios
+    // Registrar Mascotas
     register(req, res){
-        administrador.create(req.body, (error, data)=>{
+        mascotas.create(req.body, (error, data)=>{
             if(error){
                 res.status(500).json(error);
             }else{
@@ -40,19 +40,20 @@ class AdminController{
     }
     // Actualizar Veterinarios
     update(req, res){
-        let { id, nombres, apellidos, tipoDoc, numDoc, telefono, email, password, confiPass } = req.body;
-        let objAdmin = {
-            nombres,
-            apellidos,
-            tipoDoc,
-            numDoc,
-            telefono,
-            email,
-            password,
-            confiPass
+        let { id, veterinario, nombreDueño, ident_dueño, tel_dueño, email_dueño, nombreMascota, tipo, genero, vacuna } = req.body;
+        let objMasco = {
+            veterinario,
+            nombreDueño,
+            ident_dueño,
+            tel_dueño,
+            email_dueño,
+            nombreMascota,
+            tipo,
+            genero,
+            vacuna
         };
-        administrador.findByIdAndUpdate(id, {
-            $set: objAdmin
+        mascotas.findByIdAndUpdate(id, {
+            $set: objMasco
         }, (error, data)=>{
             if(error){
                 res.status(500).send();
@@ -62,9 +63,9 @@ class AdminController{
         });
     }
     // eliminar veterinarios
-    deleteAdmin(req, res){
+    deleteMascota(req, res){
         let { id } = req.body;
-        administrador.findByIdAndRemove(id, (error, data)=>{
+        mascotas.findByIdAndRemove(id, (error, data)=>{
             if(error){
                 res.status(500).send();
             }else{
@@ -75,4 +76,4 @@ class AdminController{
 
 }
 
-exports.default = AdminController;
+exports.default = MascotaControllers;
