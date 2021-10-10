@@ -28,6 +28,9 @@ const mascotasSchema = new Schema({
     genero: {
         type: String
     },
+    fecha_vacuna: {
+        type: String
+    },
     vacuna: {
         type: String
     }

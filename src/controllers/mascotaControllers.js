@@ -40,7 +40,7 @@ class MascotaControllers{
     }
     // Actualizar Veterinarios
     update(req, res){
-        let { id, veterinario, nombreDueño, ident_dueño, tel_dueño, email_dueño, nombreMascota, tipo, genero, vacuna } = req.body;
+        let { id, veterinario, nombreDueño, ident_dueño, tel_dueño, email_dueño, nombreMascota, tipo, genero, fecha_vacuna, vacuna } = req.body;
         let objMasco = {
             veterinario,
             nombreDueño,
@@ -50,6 +50,7 @@ class MascotaControllers{
             nombreMascota,
             tipo,
             genero,
+            fecha_vacuna,
             vacuna
         };
         mascotas.findByIdAndUpdate(id, {

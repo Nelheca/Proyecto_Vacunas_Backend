@@ -7,9 +7,8 @@ const mascotaRouter = require('./routers/mascotaRouter');
 const mongoose = require('mongoose');
 //Importar el módulo que contiene la url de la bd
 const database = require('./database/datab');
-
 //Importar cors
-//const cors = require('cors');
+const cors = require('cors');
 
 class Server{
     //constructor
@@ -22,7 +21,7 @@ class Server{
         this.app.set('port', process.env.PORT || 3000);
         //Indicar que se manejarán solicitudes con información JSON
         this.app.use(express.json());
-        //this.app.use(cors());
+        this.app.use(cors());
         //Rutas
         const router = express.Router();
         router.get('/', (req, res)=>{
